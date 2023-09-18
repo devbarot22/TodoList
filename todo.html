@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="./todo.css"> <!-- Include the custom CSS file -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> <!-- Include Boxicons for icons -->
+</head>
+
+<body>
+    <div id="main-container">
+        <div>
+            <h1><i class="bx bxs-checkbox-checked bx-tc"></i>My ToDo-s</h1> <!-- Title with an icon -->
+        </div>
+        <div class="task-bar">
+            <input type="search" title="Add-Task" name="AddTask-Bar" id="Input-Task" placeholder="Add New">
+            <!-- Input field for adding tasks -->
+            <div id="corner-btn">
+                <button type="button" name="btn" title="Add Task" id="AddTask-Btn">Add</button>
+                <!-- Button for adding tasks -->
+            </div>
+        </div>
+        <hr> <!-- Horizontal line for separation -->
+        <div class="taskList">
+            <h1 style="font-family: 'Maven Pro', sans-serif;">Task-list</h1>
+            <!-- Heading for the task list -->
+            <ul class="task-list"></ul>
+            <!-- Unordered list for displaying tasks -->
+        </div>
+    </div>
+    <script src="./todo.js"></script> <!-- Include the custom JavaScript file -->
+</body>
+
+</html>

@@ -1,3 +1,4 @@
+/* Import fonts from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Libre+Baskerville:wght@700&family=Lora:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Libre+Baskerville:wght@700&family=Lora:wght@500&family=Maven+Pro:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Oswald&display=swap");
@@ -31,40 +32,56 @@ h1 {
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100vw;
 }
 
-#Input-Task {
-  width: 60vw; /* Adjusted width to 60% of viewport width */
-  height: 10vh;
+/* Input styles for adding tasks */
+.Input-Task {
+  width: 75vw; /* Fixed a typo in the code (75vw instead of 75dvw) */
+  height: 6vh;
   border: none;
   border-radius: 8px;
-  align-items: center;
-  padding: 20px;
-  display: inline-block;
   position: relative;
   box-shadow: 4px 4px 10px 2px rgb(60, 60, 142);
-  font-size: larger;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
 }
 
-#Input-Task:focus {
+.Input-Tab {
+  width: 67vw;
+  height: 5vh;
+  margin-top: 5px;
+  padding-left: 2vw; /* Fixed a typo in the code (2vw instead of 2dvw) */
+  position: absolute;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.Input-Tab:focus {
   outline: none;
 }
 
-#corner-btn {
-  display: flex;
-  margin-right: 21.5vw;
+/* Button for adding tasks */
+#AddTask-Btn {
   position: absolute;
   right: 0;
-}
-
-#AddTask-Btn {
-  margin-left: 10px;
-  width: 60px;
-  height: 30px;
-  border-radius: 8px;
+  text-align: center;
+  font-size: 15px;
+  margin-right: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 27px;
+  border-radius: 4px;
+  border: 2px solid white;
   cursor: pointer;
 }
 
+/* Horizontal line for separation */
 hr {
   margin: auto;
   margin-top: 80px;
@@ -73,34 +90,32 @@ hr {
   height: 2px;
 }
 
-/* Center the .taskList */
+/* Styles for the task list container */
 .taskList {
-  width: 100%; /* Full width */
+  width: 100%;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ... Your existing CSS code ... */
-
-
+/* Styles for individual tasks */
 .taslist {
-  width: 70vw; /* Adjusted width to 70% of viewport width */
-  font-size: x-large;
-  font-family: 'Lora', serif;
+  width: 70vw;
+  min-width: 95vw;
+  height: auto;
+  font-size: 15px;
+  font-family: "Lora", serif;
   margin-bottom: 2px;
   border-radius: 10px;
   border: 2px solid rgb(165, 177, 245);
   background: transparent;
-  box-shadow: 4px 4px 10px 2px rgb(60, 60, 142);
   padding: 10px;
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Vertically center content */
+  display: flex;
+  align-items: center;
 }
 
 /* Style the checkbox */
-
 .task-checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -111,50 +126,80 @@ hr {
   border: 2px solid #7f79bd;
   border-radius: 5px;
   outline: none;
-  background-color: #ffffff;
+  background-color: transparent;
   position: relative; /* Create a positioning context for the pseudo-element */
 }
 
 /* Style the checkmark pseudo-element */
 .task-checkbox::before {
-  content: '\2714'; /* Unicode checkmark character */
-  font-size: 18px; /* Adjust the size as needed */
-  position: absolute; /* Position the checkmark relative to the checkbox */
-  top: 50%; /* Vertically center the checkmark */
-  left: 50%; /* Horizontally center the checkmark */
-  transform: translate(-50%, -50%); /* Center the checkmark perfectly */
-  color: #88a0ef; /* Checkmark color */
+  content: "\2714"; /* Unicode checkmark character */
+  font-size: 18px; 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: #72e6a1; 
   border: transparent;
   border-radius: 10px;
-  opacity: 0; /* Initially hide the checkmark */
+  opacity: 0;
 }
 
 /* Show the checkmark when the checkbox is checked */
 .task-checkbox:checked::before {
-  opacity: 1; /* Show the checkmark when checked */
+  opacity: 1; 
 }
 
-
-
+/* Styles for task list items */
 .taskList ul,
 .taskList li {
   list-style: none;
+  white-space: pre-wrap; 
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Add an ellipsis (...) to indicate truncated text */
+  max-width: 100%; /* Ensure the text stays within the container */
 }
 
-
+/* Styles for the delete icon */
 .bx1 {
-  float: right;
+  right: 0;
   align-items: center;
-  margin-left: auto; /* Push 'x' icon to the right */
+  margin-left: auto;
   cursor: pointer;
+  color: #ffffff; 
+  position: sticky;
 }
 
-.label-container {
-  flex-grow: 1; /* Allow the label to grow and wrap when needed */
-  word-wrap: break-word; /* Allow long words to break onto the next line */
+/* Styles for completed tasks */
+.completed label {
+  text-decoration: line-through; 
+  color: 2px solid #000000; /* Fixed a typo in the code (color: 2px solid #000000) */
 }
 
-.completed {
-  text-decoration: line-through; /* Add a horizontal line */
-  color: 2px solid #000000; /* You can adjust the color for completed tasks */
+/* Animation for fading out tasks */
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+/* Animation for fading in tasks */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

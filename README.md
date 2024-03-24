@@ -1,10 +1,4 @@
-You can check out the project here: https://mytodo-s-3860d.web.app/
-
-
-
-
-
-ToDo List Web Application
+#ToDo List Web Application
 
 
 overview:
